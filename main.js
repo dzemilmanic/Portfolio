@@ -55,3 +55,15 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+document.getElementById('download__cv').addEventListener('click', function() {
+    var Path = 'images/Cv.pdf';
+    
+    var link = document.createElement('a');
+    link.href = Path;
+    link.download = 'Cv.pdf'; // Naziv fajla koji će biti preuzet
+    
+    link.click();
+
+    window.open(Path, '_blank');
+});
