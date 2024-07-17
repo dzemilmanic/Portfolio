@@ -320,7 +320,9 @@ img {
   .work__img img:hover {
     transform: scale(1.1);
   }
-  
+  .work__text{
+    text-align: center;
+  }
   /* ===== CONTACT =====*/
   .contact__input {
     width: 100%;
