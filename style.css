@@ -247,9 +247,13 @@ img {
   }
   .about__img {
     justify-self: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+    margin-top: 0;
   }
   .about__img img {
-    width: 200px;
+    width: 500px;
     border-radius: 0.5rem;
   }
   
