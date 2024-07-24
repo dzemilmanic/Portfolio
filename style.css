@@ -176,12 +176,7 @@ img {
   .show {
     right: 0;
   }
-  #home{
-    background-image: url(images/ja2.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
-  }
+  
   #about{
     background-color: #FAFAFA	;
   }
