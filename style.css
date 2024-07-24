@@ -93,7 +93,6 @@ img {
   .section {
     padding-top: 3rem;
     padding-bottom: 2rem;
-    
   }
   
   /*===== LAYOUT =====*/
@@ -177,7 +176,16 @@ img {
   .show {
     right: 0;
   }
-  
+
+  #about{
+    background-color: #FAFAFA	;
+  }
+  #projects{
+    background-color: #F0F0F0;
+  }
+  #contact{
+    background-color: #E7E7E7;
+  }
   /*===== HOME =====*/
   .home {
     position: relative;
@@ -241,7 +249,6 @@ img {
     text-align: justify;
     justify-content: center;
     align-items: center;
-    
   }
   .about__subtitle {
     margin-bottom: var(--mb-2);
