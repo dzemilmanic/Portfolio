@@ -67,3 +67,29 @@ document.getElementById('download__cv').addEventListener('click', function() {
 
     window.open(Path, '_blank');
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const pageSwitch = document.getElementById("page-switch");
+
+    // Proveri stanje preklopnika i postavi stranicu
+    if (localStorage.getItem("page") === "index2") {
+        pageSwitch.checked = true;
+        if (window.location.pathname.endsWith("index.html")) {
+            window.location.href = "index2.html";
+        }
+    } else {
+        if (window.location.pathname.endsWith("index2.html")) {
+            window.location.href = "index.html";
+        }
+    }
+
+    pageSwitch.addEventListener("change", function() {
+        if (pageSwitch.checked) {
+            localStorage.setItem("page", "index2");
+            window.location.href = "index2.html";
+        } else {
+            localStorage.setItem("page", "index");
+            window.location.href = "index.html";
+        }
+    });
+});
