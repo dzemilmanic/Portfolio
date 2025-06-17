@@ -133,7 +133,7 @@ function App() {
       >
         <img 
           src="https://dzemil.blob.core.windows.net/slike/ja_kotor.jpg" 
-          alt="Dzemil Manic" 
+          alt="Džemil Manić" 
           className="floating-profile-image"
         />
       </div>
@@ -179,12 +179,12 @@ function App() {
               <div className="avatar-circle">
                 <img 
                   src="https://dzemil.blob.core.windows.net/slike/ja_kotor.jpg" 
-                  alt="Dzemil Manic" 
+                  alt="Džemil Manić" 
                   className="avatar-image"
                 />
               </div>
               <h1 className="hero-title">
-                Dzemil <span className="gradient-text">Manic</span>
+                Džemil <span className="gradient-text">Manić</span>
               </h1>
               <p className="hero-subtitle">
                 Software Engineering Student & Full-Stack Developer
