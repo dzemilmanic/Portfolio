@@ -143,7 +143,7 @@ function App() {
         <div className="nav-container">
           <div className="nav-content">
             <div className="logo">
-              <span className="logo-text">Dzemil Manic</span>
+              <span className="logo-text">Džemil Manić</span>
               <span className="logo-subtitle">Software Engineer</span>
             </div>
             <div className="nav-links">
@@ -474,7 +474,7 @@ function App() {
               </a>
             </div>
             <p className="copyright">
-              © 2025 Dzemil Manic. Built with React.
+              © 2025 Džemil Manić. Built with React.
             </p>
           </div>
         </div>
