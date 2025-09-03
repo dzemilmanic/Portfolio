@@ -187,6 +187,14 @@ function App() {
       liveUrl: "https://github.com/dzemilmanic/Sunrise-and-Sunset",
       image: "https://dzemil.blob.core.windows.net/slike/sunrise.png",
     },
+    {
+      title: "Rijad software ",
+      description:
+        "This project is a React-based website for Rijad Software, an IT company located in Germany.",
+      technologies: ["React", "Web Development"],
+      liveUrl: "https://github.com/dzemilmanic/rijad-software",
+      image: "https://i.postimg.cc/wMbFLTRP/rijad.png",
+    },
   ];
 
   const scrollToSection = (sectionId: string) => {
