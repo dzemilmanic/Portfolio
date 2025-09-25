@@ -188,12 +188,20 @@ function App() {
       image: "https://dzemil.blob.core.windows.net/slike/sunrise.png",
     },
     {
-      title: "Rijad software ",
+      title: "Rijad software",
       description:
         "This project is a React-based website for Rijad Software, an IT company located in Germany.",
       technologies: ["React", "Web Development"],
       liveUrl: "https://github.com/dzemilmanic/rijad-software",
       image: "https://i.postimg.cc/wMbFLTRP/rijad.png",
+    },
+    {
+      title: "NaviGo",
+      description:
+        "NaviGo is a modern React-.NET application for the Digital Logistics & Transportation Platform.",
+      technologies: ["React", "ASP.NET", "CQRS", "Web Development"],
+      liveUrl: "https://github.com/dzemilmanic/navigo",
+      image: "https://i.postimg.cc/TPTMj4K1/navigo.png",
     },
   ];
 
