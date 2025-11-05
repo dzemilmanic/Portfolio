@@ -429,7 +429,7 @@ function App() {
             <div className="about-text animated-text-content">
               <h3 className="about-title">Passionate Software Engineer</h3>
               <p className="about-paragraph">
-                I'm currently in my third year of Software Engineering studies,
+                I'm currently in my final year of Software Engineering studies,
                 where I've developed a strong foundation in multiple programming
                 paradigms and technologies. My journey spans from low-level
                 hardware description languages like VHDL to modern web
