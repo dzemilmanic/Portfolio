@@ -203,6 +203,14 @@ function App() {
       liveUrl: "https://github.com/dzemilmanic/navigo",
       image: "https://i.postimg.cc/TPTMj4K1/navigo.png",
     },
+    {
+      title: "Air Quality Monitor",
+      description:
+        "Real-time Air Pollution Monitoring for the City of Novi Pazar",
+      technologies: ["React"],
+      liveUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
+      image: "https://i.postimg.cc/pTRVtNhx/vazduh.png",
+    },
   ];
 
   const scrollToSection = (sectionId: string) => {
