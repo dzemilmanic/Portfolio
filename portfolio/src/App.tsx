@@ -385,7 +385,7 @@ function App() {
                 className="hero-description animated-text"
                 style={{ animationDelay: "0.8s" }}
               >
-                Third-year Software Engineering student passionate about
+                Final-year Software Engineering student passionate about
                 creating innovative solutions with modern technologies across
                 web, desktop, and system programming.
               </p>
