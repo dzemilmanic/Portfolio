@@ -211,6 +211,14 @@ function App() {
       liveUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
       image: "https://i.postimg.cc/pTRVtNhx/vazduh.png",
     },
+    {
+      title: "HopMe",
+      description:
+        "A modern ride-sharing platform connecting drivers with passengers traveling the same route",
+      technologies: ["Swift", "NodeJs", "IOS"],
+      liveUrl: "https://github.com/dzemilmanic/HopMe",
+      image: "",
+    },
   ];
 
   const scrollToSection = (sectionId: string) => {
