@@ -206,7 +206,7 @@ function App() {
     {
       title: "Air Quality Monitor",
       description:
-        "Real-time Air Pollution Monitoring for the City of Novi Pazar",
+        "Real-time Air Pollution Monitoring for the City of Novi Pazar.",
       technologies: ["React"],
       liveUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
       image: "https://i.postimg.cc/pTRVtNhx/vazduh.png",
@@ -214,7 +214,7 @@ function App() {
     {
       title: "HopMe",
       description:
-        "A modern ride-sharing platform connecting drivers with passengers traveling the same route",
+        "A modern ride-sharing platform connecting drivers with passengers traveling the same route.",
       technologies: ["Swift", "NodeJs", "IOS"],
       liveUrl: "https://github.com/dzemilmanic/HopMe",
       image: "",
