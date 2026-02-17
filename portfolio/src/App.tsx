@@ -86,7 +86,7 @@ function App() {
     {
       title: "Frontend Development",
       icon: Globe,
-      skills: ["React", "JavaScript", "HTML/CSS", "Tailwind CSS"],
+      skills: ["React", "JavaScript", "Swift", "HTML/CSS", "Tailwind CSS"],
       description: "Creating responsive and interactive user interfaces",
     },
     {
