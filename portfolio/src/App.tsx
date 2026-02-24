@@ -206,7 +206,7 @@ function App() {
     {
       title: "Air Quality Monitor",
       description:
-        "Real-time Air Pollution Monitoring for the City of Novi Pazar.",
+        "Design and Implementation of a Real-time Air Pollution Monitoring System for Novi Pazar and Tutin.",
       technologies: ["React"],
       liveUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
       image: "https://i.postimg.cc/pTRVtNhx/vazduh.png",
