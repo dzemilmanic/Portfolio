@@ -217,7 +217,7 @@ function App() {
         "A modern ride-sharing platform connecting drivers with passengers traveling the same route.",
       technologies: ["Swift", "NodeJs", "IOS"],
       liveUrl: "https://github.com/dzemilmanic/HopMe",
-      image: "",
+      image: "https://i.postimg.cc/CMQND6Sy/image.png",
     },
   ];
 
