@@ -483,11 +483,11 @@ function App() {
       <section id="skills" className="skills-section visible">
         <div className="container">
           <div className="section-header animated-header">
-            <h2 className="section-title">Skills & Expertise</h2>
-            <div className="section-divider"></div>
-            <p className="section-description">
-              A comprehensive overview of my technical skills and areas of
-              expertise
+            <span className="section-eyebrow">What I work with</span>
+            <h2 className="section-title skills-title">Skills &amp; Expertise</h2>
+            <div className="section-divider skills-divider"></div>
+            <p className="skills-section-description">
+              A comprehensive overview of my technical skills and areas of expertise
             </p>
           </div>
 
@@ -500,12 +500,16 @@ function App() {
                   className="skill-card animated-skill-card"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
+                  <div className="skill-card-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
                   <div className="skill-card-header">
                     <div className="skill-icon-wrapper">
                       <IconComponent className="skill-icon" />
                     </div>
                     <h3 className="skill-card-title">{category.title}</h3>
                   </div>
+                  <div className="skill-card-divider"></div>
                   <p className="skill-card-description">
                     {category.description}
                   </p>
@@ -544,16 +548,23 @@ function App() {
                 className="project-card animated-project-card"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="project-header">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-image"
-                  />
-                  <div className="project-overlay">
-                    <ExternalLink className="overlay-icon" />
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-header-link"
+                >
+                  <div className="project-header">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                    />
+                    <div className="project-overlay">
+                      <ExternalLink className="overlay-icon" />
+                    </div>
                   </div>
-                </div>
+                </a>
 
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
@@ -579,7 +590,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="project-link"
                   >
-                    {(project.title = "View Repository")}
+                    View Repository
                     <ExternalLink className="link-icon" />
                   </a>
                 </div>
