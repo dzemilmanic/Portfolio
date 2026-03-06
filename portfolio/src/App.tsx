@@ -129,7 +129,7 @@ function App() {
         "A classic two-player strategy game where players take turns dropping their pieces into a 7x6 grid. This project delivers a modern version using Django backend and React frontend.",
       technologies: ["Django", "React", "Game Development"],
       githubUrl: "https://github.com/dzemilmanic/Connect4",
-      hostedUrl: "",
+      hostedUrl: "https://connect4-game.up.railway.app/",
       image: "https://dzemil.blob.core.windows.net/slike/connect4.png",
     },
     {
@@ -138,7 +138,7 @@ function App() {
         "A collection of Arduino-based hardware projects showcasing embedded systems programming, sensor integration, and IoT applications. Various projects demonstrating microcontroller programming and electronics.",
       technologies: ["Arduino", "C++", "Electronics", "IoT"],
       githubUrl: "https://github.com/dzemilmanic/Arduino-projects",
-      hostedUrl: "",
+      hostedUrl: "https://www.youtube.com/@dzemilmanic",
       image:
         "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
@@ -148,7 +148,7 @@ function App() {
         "An interactive puzzle-solving application built with Django and React, providing users with engaging puzzle challenges and solutions.",
       technologies: ["Django", "React", "Problem Solving"],
       githubUrl: "https://github.com/dzemilmanic/Puzzle",
-      hostedUrl: "",
+      hostedUrl: "https://pyzzle.up.railway.app/",
       image: "https://dzemil.blob.core.windows.net/slike/puzla.png",
     },
     {
@@ -157,7 +157,7 @@ function App() {
         "Structo is a full-stack web application built with Laravel (Blade) and MySQL. It serves as a bridge between everyday users and professionals in the architecture and construction industries. ",
       technologies: ["Laravel", "PHP", "Blade", "MySQL", "Full-stack"],
       githubUrl: "https://github.com/dzemilmanic/Structo",
-      hostedUrl: "",
+      hostedUrl: "https://structo.up.railway.app/",
       image: "https://dzemil.blob.core.windows.net/slike/structo.png",
     },
     {
@@ -166,7 +166,7 @@ function App() {
         "A full-stack web application developed for a private eye clinic. It allows patients, doctors, and administrators to manage appointments, access medical history, and view important clinic services.",
       technologies: ["Full-stack", "User Management", "Medical System"],
       githubUrl: "https://github.com/dzemilmanic/Oculus-web",
-      hostedUrl: "",
+      hostedUrl: "https://oculusklinika.up.railway.app/",
       image: "https://dzemil.blob.core.windows.net/slike/oculus_home.png",
     },
     {
@@ -175,7 +175,7 @@ function App() {
         "A desktop-based E-commerce platform developed using C# and WPF with SQL Server as the database. It supports two types of users: Customers and Sellers (Companies).",
       technologies: ["C#", "WPF", "SQL Server", "Desktop App"],
       githubUrl: "https://github.com/dzemilmanic/E-market",
-      hostedUrl: "",
+      hostedUrl: "https://presentation-wpf-project.netlify.app/",
       image: "https://dzemil.blob.core.windows.net/slike/ecomerc.png",
     },
     {
@@ -193,7 +193,7 @@ function App() {
         "A modern web application that provides users with real-time solar information — including sunrise, sunset, and other solar events — for locations around the world using the SunriseSunset.io API.",
       technologies: ["JavaScript", "API Integration", "Web Development"],
       githubUrl: "https://github.com/dzemilmanic/Sunrise-and-Sunset",
-      hostedUrl: "",
+      hostedUrl: "https://sunristeandsunset.netlify.app/",
       image: "https://dzemil.blob.core.windows.net/slike/sunrise.png",
     },
     {
@@ -202,7 +202,7 @@ function App() {
         "This project is a React-based website for Rijad Software, an IT company located in Germany.",
       technologies: ["React", "Web Development"],
       githubUrl: "https://github.com/dzemilmanic/rijad-software",
-      hostedUrl: "",
+      hostedUrl: "https://rijadsoftware.com/",
       image: "https://i.postimg.cc/wMbFLTRP/rijad.png",
     },
     {
@@ -211,7 +211,7 @@ function App() {
         "NaviGo is a modern React-.NET application for the Digital Logistics & Transportation Platform.",
       technologies: ["React", "ASP.NET", "CQRS", "Web Development"],
       githubUrl: "https://github.com/dzemilmanic/navigo",
-      hostedUrl: "",
+      hostedUrl: "https://navigo.up.railway.app/",
       image: "https://i.postimg.cc/TPTMj4K1/navigo.png",
     },
     {
@@ -220,7 +220,7 @@ function App() {
         "Design and Implementation of a Real-time Air Pollution Monitoring System for Novi Pazar and Tutin.",
       technologies: ["React"],
       githubUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
-      hostedUrl: "",
+      hostedUrl: "https://vazduh.netlify.app/",
       image: "https://i.postimg.cc/pTRVtNhx/vazduh.png",
     },
     {
