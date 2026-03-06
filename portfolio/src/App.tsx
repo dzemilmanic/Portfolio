@@ -16,6 +16,7 @@ import {
   Terminal,
   Cpu,
   Instagram,
+  GitBranch,
 } from "lucide-react";
 import "./App.css";
 
@@ -127,7 +128,8 @@ function App() {
       description:
         "A classic two-player strategy game where players take turns dropping their pieces into a 7x6 grid. This project delivers a modern version using Django backend and React frontend.",
       technologies: ["Django", "React", "Game Development"],
-      liveUrl: "https://github.com/dzemilmanic/Connect4",
+      githubUrl: "https://github.com/dzemilmanic/Connect4",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/connect4.png",
     },
     {
@@ -135,7 +137,8 @@ function App() {
       description:
         "A collection of Arduino-based hardware projects showcasing embedded systems programming, sensor integration, and IoT applications. Various projects demonstrating microcontroller programming and electronics.",
       technologies: ["Arduino", "C++", "Electronics", "IoT"],
-      liveUrl: "https://github.com/dzemilmanic/Arduino-projects",
+      githubUrl: "https://github.com/dzemilmanic/Arduino-projects",
+      hostedUrl: "",
       image:
         "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
@@ -144,7 +147,8 @@ function App() {
       description:
         "An interactive puzzle-solving application built with Django and React, providing users with engaging puzzle challenges and solutions.",
       technologies: ["Django", "React", "Problem Solving"],
-      liveUrl: "https://github.com/dzemilmanic/Puzzle",
+      githubUrl: "https://github.com/dzemilmanic/Puzzle",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/puzla.png",
     },
     {
@@ -152,7 +156,8 @@ function App() {
       description:
         "Structo is a full-stack web application built with Laravel (Blade) and MySQL. It serves as a bridge between everyday users and professionals in the architecture and construction industries. ",
       technologies: ["Laravel", "PHP", "Blade", "MySQL", "Full-stack"],
-      liveUrl: "https://github.com/dzemilmanic/Structo",
+      githubUrl: "https://github.com/dzemilmanic/Structo",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/structo.png",
     },
     {
@@ -160,7 +165,8 @@ function App() {
       description:
         "A full-stack web application developed for a private eye clinic. It allows patients, doctors, and administrators to manage appointments, access medical history, and view important clinic services.",
       technologies: ["Full-stack", "User Management", "Medical System"],
-      liveUrl: "https://github.com/dzemilmanic/Oculus-web",
+      githubUrl: "https://github.com/dzemilmanic/Oculus-web",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/oculus_home.png",
     },
     {
@@ -168,7 +174,8 @@ function App() {
       description:
         "A desktop-based E-commerce platform developed using C# and WPF with SQL Server as the database. It supports two types of users: Customers and Sellers (Companies).",
       technologies: ["C#", "WPF", "SQL Server", "Desktop App"],
-      liveUrl: "https://github.com/dzemilmanic/E-market",
+      githubUrl: "https://github.com/dzemilmanic/E-market",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/ecomerc.png",
     },
     {
@@ -176,7 +183,8 @@ function App() {
       description:
         "Oculus is a full-stack mobile built with React Native, Node.js with GraphQL and .NET. The app allows patients, doctors, and administrators to efficiently manage appointments, view medical history, and access clinic-related services and information — all from a mobile device.",
       technologies: ["Full-stack", "Medical System", "Mobile App"],
-      liveUrl: "https://github.com/dzemilmanic/Oculus-app",
+      githubUrl: "https://github.com/dzemilmanic/Oculus-app",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/app.jpg",
     },
     {
@@ -184,7 +192,8 @@ function App() {
       description:
         "A modern web application that provides users with real-time solar information — including sunrise, sunset, and other solar events — for locations around the world using the SunriseSunset.io API.",
       technologies: ["JavaScript", "API Integration", "Web Development"],
-      liveUrl: "https://github.com/dzemilmanic/Sunrise-and-Sunset",
+      githubUrl: "https://github.com/dzemilmanic/Sunrise-and-Sunset",
+      hostedUrl: "",
       image: "https://dzemil.blob.core.windows.net/slike/sunrise.png",
     },
     {
@@ -192,7 +201,8 @@ function App() {
       description:
         "This project is a React-based website for Rijad Software, an IT company located in Germany.",
       technologies: ["React", "Web Development"],
-      liveUrl: "https://github.com/dzemilmanic/rijad-software",
+      githubUrl: "https://github.com/dzemilmanic/rijad-software",
+      hostedUrl: "",
       image: "https://i.postimg.cc/wMbFLTRP/rijad.png",
     },
     {
@@ -200,7 +210,8 @@ function App() {
       description:
         "NaviGo is a modern React-.NET application for the Digital Logistics & Transportation Platform.",
       technologies: ["React", "ASP.NET", "CQRS", "Web Development"],
-      liveUrl: "https://github.com/dzemilmanic/navigo",
+      githubUrl: "https://github.com/dzemilmanic/navigo",
+      hostedUrl: "",
       image: "https://i.postimg.cc/TPTMj4K1/navigo.png",
     },
     {
@@ -208,7 +219,8 @@ function App() {
       description:
         "Design and Implementation of a Real-time Air Pollution Monitoring System for Novi Pazar and Tutin.",
       technologies: ["React"],
-      liveUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
+      githubUrl: "https://github.com/dzemilmanic/Monitor-kvaliteta-vazduha",
+      hostedUrl: "",
       image: "https://i.postimg.cc/pTRVtNhx/vazduh.png",
     },
     {
@@ -216,7 +228,8 @@ function App() {
       description:
         "A modern ride-sharing platform connecting drivers with passengers traveling the same route.",
       technologies: ["Swift", "NodeJs", "IOS"],
-      liveUrl: "https://github.com/dzemilmanic/HopMe",
+      githubUrl: "https://github.com/dzemilmanic/HopMe",
+      hostedUrl: "",
       image: "https://i.postimg.cc/T20jGdtV/image.png",
     },
   ];
@@ -548,23 +561,26 @@ function App() {
                 className="project-card animated-project-card"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-header-link"
-                >
-                  <div className="project-header">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="project-image"
-                    />
-                    <div className="project-overlay">
-                      <ExternalLink className="overlay-icon" />
-                    </div>
-                  </div>
-                </a>
+                {/* Image — links to hosted project if available */}
+                <div className="project-header">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                  />
+                  {project.hostedUrl && (
+                    <a
+                      href={project.hostedUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-overlay"
+                      title="View live project"
+                    >
+                      <Globe className="overlay-icon" />
+                      <span className="overlay-label">Live Demo</span>
+                    </a>
+                  )}
+                </div>
 
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
@@ -584,15 +600,28 @@ function App() {
                     ))}
                   </div>
 
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    View Repository
-                    <ExternalLink className="link-icon" />
-                  </a>
+                  <div className="project-links">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <GitBranch className="link-icon" />
+                      View Repository
+                    </a>
+                    {project.hostedUrl && (
+                      <a
+                        href={project.hostedUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link project-link-hosted"
+                      >
+                        <Globe className="link-icon" />
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
