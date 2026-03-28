@@ -7,6 +7,8 @@ import {
   Code,
   Globe,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   User,
   Briefcase,
   MessageSquare,
@@ -17,6 +19,8 @@ import "./App.css";
 import { projects } from "./data/projects";
 import { skillCategories } from "./data/skills";
 
+const PROJECTS_PER_PAGE = 3;
+
 function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +28,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [, setVisibleSections] = useState(new Set(["home"])); // Start with home visible
+  const [currentPage, setCurrentPage] = useState(0);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -401,78 +406,134 @@ function App() {
             <div className="section-divider"></div>
           </div>
 
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="project-card animated-project-card"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                {/* Image — links to hosted project if available */}
-                <div className="project-header">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-image"
-                  />
-                  {project.hostedUrl && (
-                    <a
-                      href={project.hostedUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-overlay"
-                      title="View live project"
-                    >
-                      <Globe className="overlay-icon" />
-                      <span className="overlay-label">Live Demo</span>
-                    </a>
-                  )}
-                </div>
+          {/* Carousel wrapper */}
+          <div className="projects-carousel">
+            <button
+              className="carousel-btn carousel-btn-prev"
+              onClick={() =>
+                setCurrentPage((p) =>
+                  p === 0 ? Math.ceil(projects.length / PROJECTS_PER_PAGE) - 1 : p - 1
+                )
+              }
+              aria-label="Previous projects"
+            >
+              <ChevronLeft className="carousel-btn-icon" />
+            </button>
 
-                <div className="project-content">
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
+            <div className="projects-grid">
+              {projects
+                .slice(
+                  currentPage * PROJECTS_PER_PAGE,
+                  currentPage * PROJECTS_PER_PAGE + PROJECTS_PER_PAGE
+                )
+                .map((project, index) => (
+                  <div
+                    key={currentPage * PROJECTS_PER_PAGE + index}
+                    className="project-card animated-project-card"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {/* Image — links to hosted project if available */}
+                    <div className="project-header">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="project-image"
+                      />
+                      {project.hostedUrl && (
+                        <a
+                          href={project.hostedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-overlay"
+                          title="View live project"
+                        >
+                          <Globe className="overlay-icon" />
+                          <span className="overlay-label">Live Demo</span>
+                        </a>
+                      )}
+                    </div>
 
-                  <div className="project-technologies">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={tech}
-                        className="tech-tag animated-tech-tag"
-                        style={{
-                          animationDelay: `${index * 0.15 + techIndex * 0.05}s`,
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    <div className="project-content">
+                      <h3 className="project-title">{project.title}</h3>
+                      <p className="project-description">{project.description}</p>
+
+                      <div className="project-technologies">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={tech}
+                            className="tech-tag animated-tech-tag"
+                            style={{
+                              animationDelay: `${index * 0.1 + techIndex * 0.05}s`,
+                            }}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-links">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          <GitBranch className="link-icon" />
+                          View Repository
+                        </a>
+                        {project.hostedUrl && (
+                          <a
+                            href={project.hostedUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link project-link-hosted"
+                          >
+                            <Globe className="link-icon" />
+                            Live Demo
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
+                ))}
+            </div>
 
-                  <div className="project-links">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <GitBranch className="link-icon" />
-                      View Repository
-                    </a>
-                    {project.hostedUrl && (
-                      <a
-                        href={project.hostedUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link project-link-hosted"
-                      >
-                        <Globe className="link-icon" />
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
+            <button
+              className="carousel-btn carousel-btn-next"
+              onClick={() =>
+                setCurrentPage((p) =>
+                  p >= Math.ceil(projects.length / PROJECTS_PER_PAGE) - 1 ? 0 : p + 1
+                )
+              }
+              aria-label="Next projects"
+            >
+              <ChevronRight className="carousel-btn-icon" />
+            </button>
+          </div>
+
+          {/* Dot pagination */}
+          <div className="carousel-dots">
+            {Array.from({
+              length: Math.ceil(projects.length / PROJECTS_PER_PAGE),
+            }).map((_, i) => (
+              <button
+                key={i}
+                className={`carousel-dot${i === currentPage ? " active" : ""}`}
+                onClick={() => setCurrentPage(i)}
+                aria-label={`Go to page ${i + 1}`}
+              />
             ))}
           </div>
+
+          {/* Counter */}
+          <p className="carousel-counter">
+            Showing {currentPage * PROJECTS_PER_PAGE + 1}–
+            {Math.min(
+              (currentPage + 1) * PROJECTS_PER_PAGE,
+              projects.length
+            )}{" "}
+            of {projects.length} projects
+          </p>
         </div>
       </section>
 

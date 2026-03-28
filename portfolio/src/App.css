@@ -1201,10 +1201,114 @@ body {
   background: white;
 }
 
+/* Carousel layout */
+.projects-carousel {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-carousel {
+    flex-direction: column;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .carousel-btn {
+    align-self: center;
+  }
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  background: white;
+  color: #1e40af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-top: 8rem; /* vertically center relative to card image area */
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.15);
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+}
+
+.carousel-btn-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Dot pagination */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+}
+
+.carousel-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.carousel-dot:hover:not(.active) {
+  background: #94a3b8;
+}
+
+/* Counter text */
+.carousel-counter {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .animated-project-card {
