@@ -19,7 +19,6 @@ import "./App.css";
 import { projects } from "./data/projects";
 import { skillCategories } from "./data/skills";
 
-const PROJECTS_PER_PAGE = 3;
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -27,8 +26,11 @@ function App() {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [, setVisibleSections] = useState(new Set(["home"])); // Start with home visible
+  const [, setVisibleSections] = useState(new Set(["home"]));
   const [currentPage, setCurrentPage] = useState(0);
+  const [projectsPerPage, setProjectsPerPage] = useState(() =>
+    window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3
+  );
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -58,6 +60,17 @@ function App() {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
 
+    // Responsive projects per page
+    const handleResize = () => {
+      const perPage =
+        window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+      setProjectsPerPage((prev) => {
+        if (prev !== perPage) setCurrentPage(0);
+        return perPage;
+      });
+    };
+    window.addEventListener("resize", handleResize);
+
     // Intersection Observer for animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -80,6 +93,7 @@ function App() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
       observerRef.current?.disconnect();
       clearInterval(loadingInterval);
     };
@@ -412,7 +426,7 @@ function App() {
               className="carousel-btn carousel-btn-prev"
               onClick={() =>
                 setCurrentPage((p) =>
-                  p === 0 ? Math.ceil(projects.length / PROJECTS_PER_PAGE) - 1 : p - 1
+                  p === 0 ? Math.ceil(projects.length / projectsPerPage) - 1 : p - 1
                 )
               }
               aria-label="Previous projects"
@@ -423,12 +437,12 @@ function App() {
             <div className="projects-grid">
               {projects
                 .slice(
-                  currentPage * PROJECTS_PER_PAGE,
-                  currentPage * PROJECTS_PER_PAGE + PROJECTS_PER_PAGE
+                  currentPage * projectsPerPage,
+                  currentPage * projectsPerPage + projectsPerPage
                 )
                 .map((project, index) => (
                   <div
-                    key={currentPage * PROJECTS_PER_PAGE + index}
+                    key={currentPage * projectsPerPage + index}
                     className="project-card animated-project-card"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
@@ -502,7 +516,7 @@ function App() {
               className="carousel-btn carousel-btn-next"
               onClick={() =>
                 setCurrentPage((p) =>
-                  p >= Math.ceil(projects.length / PROJECTS_PER_PAGE) - 1 ? 0 : p + 1
+                  p >= Math.ceil(projects.length / projectsPerPage) - 1 ? 0 : p + 1
                 )
               }
               aria-label="Next projects"
@@ -514,7 +528,7 @@ function App() {
           {/* Dot pagination */}
           <div className="carousel-dots">
             {Array.from({
-              length: Math.ceil(projects.length / PROJECTS_PER_PAGE),
+              length: Math.ceil(projects.length / projectsPerPage),
             }).map((_, i) => (
               <button
                 key={i}
@@ -527,9 +541,9 @@ function App() {
 
           {/* Counter */}
           <p className="carousel-counter">
-            Showing {currentPage * PROJECTS_PER_PAGE + 1}–
+            Showing {currentPage * projectsPerPage + 1}–
             {Math.min(
-              (currentPage + 1) * PROJECTS_PER_PAGE,
+              (currentPage + 1) * projectsPerPage,
               projects.length
             )}{" "}
             of {projects.length} projects

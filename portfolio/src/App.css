@@ -1225,13 +1225,16 @@ body {
 
 @media (max-width: 640px) {
   .projects-carousel {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
   }
   .projects-grid {
     grid-template-columns: 1fr;
   }
   .carousel-btn {
-    align-self: center;
+    margin-top: 0;
+    flex-shrink: 0;
   }
 }
 
