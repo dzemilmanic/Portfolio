@@ -342,7 +342,7 @@ function App() {
                   className="stat-card animated-stat"
                   style={{ animationDelay: "0.2s" }}
                 >
-                  <div className="stat-number">10+</div>
+                  <div className="stat-number">15+</div>
                   <div className="stat-label">Projects Completed</div>
                 </div>
                 <div
