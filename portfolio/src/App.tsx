@@ -239,6 +239,15 @@ function App() {
         </div>
       </nav>
 
+     
+      <div className="hosting-notice">
+        <span className="hosting-notice-dot" />
+        <span className="hosting-notice-text">
+          Projects are currently not hosted — demos may be unavailable.
+        </span>
+      </div>
+      
+
       {/* Hero Section */}
       <section id="home" className="hero-section visible">
         <div className="container">
