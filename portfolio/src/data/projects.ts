@@ -121,7 +121,7 @@ export const projects: Project[] = [
     title: "Trainify",
     description:
       "Trainify – a modern solution for managing football clubs, group training sessions, participants, coaches, as well as internal communication and progress tracking.",
-    technologies: ["Angular", "ASP.NET core", "PostgreSQL"],
+    technologies: ["Angular", "ASP.NET", "PostgreSQL"],
     githubUrl: "https://github.com/dzemilmanic/Trainify-frontend",
     hostedUrl: "https://trainify.up.railway.app/",
     image: "",
