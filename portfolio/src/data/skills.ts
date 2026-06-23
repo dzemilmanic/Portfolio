@@ -12,13 +12,13 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend Development",
     icon: Globe,
-    skills: ["React", "JavaScript", "Swift", "HTML/CSS", "Tailwind CSS"],
+    skills: ["React", "JavaScript", "Angular", "Swift", "HTML/CSS", "Tailwind CSS"],
     description: "Creating responsive and interactive user interfaces",
   },
   {
     title: "Backend Development",
     icon: Server,
-    skills: ["ASP.NET", "Django", "Laravel", "PHP"],
+    skills: ["ASP.NET", "Django", "NodeJS", "Laravel", "PHP"],
     description: "Building robust server-side applications and APIs",
   },
   {
