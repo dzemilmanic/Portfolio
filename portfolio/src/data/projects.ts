@@ -117,4 +117,13 @@ export const projects: Project[] = [
     hostedUrl: "",
     image: "https://i.postimg.cc/T20jGdtV/image.png",
   },
+  {
+    title: "Trainify",
+    description:
+      "Trainify sistem – moderno rešenje za upravljanje fudbalskim klubom, grupnim treninzima, članovima (polaznicima), trenerima, te internom komunikacijom i praćenjem napretka",
+    technologies: ["Angular", "ASP.NET core", "PostgreSQL"],
+    githubUrl: "https://github.com/dzemilmanic/Trainify-frontend",
+    hostedUrl: "https://trainify.up.railway.app/",
+    image: "",
+  },
 ];
