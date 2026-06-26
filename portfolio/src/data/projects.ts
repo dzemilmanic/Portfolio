@@ -124,6 +124,6 @@ export const projects: Project[] = [
     technologies: ["Angular", "ASP.NET", "PostgreSQL"],
     githubUrl: "https://github.com/dzemilmanic/Trainify-frontend",
     hostedUrl: "https://trainify.up.railway.app/",
-    image: "",
+    image: "https://i.postimg.cc/Nf2cF5F4/image.png",
   },
 ];
