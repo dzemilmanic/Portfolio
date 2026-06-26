@@ -5,6 +5,8 @@ export interface Project {
   githubUrl: string;
   hostedUrl: string;
   image: string;
+  images?: string[];
+  details?: string;
 }
 
 export const projects: Project[] = [
@@ -16,6 +18,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dzemilmanic/Connect4",
     hostedUrl: "https://connect4-game.up.railway.app/",
     image: "https://dzemil.blob.core.windows.net/slike/connect4.png",
+    images: [
+      "https://dzemil.blob.core.windows.net/slike/connect4.png",
+      "https://images.pexels.com/photos/3719037/pexels-photo-3719037.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/9072216/pexels-photo-9072216.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    details: "Ova igra sadrži i Django backend koji omogućava praćenje rezultata, istoriju igara i matchmaking za dva igrača u realnom vremenu. Frontend je kreiran pomoću React-a kako bi se obezbedio gladak i reaktivan korisnički interfejs. Dodatno su implementirane animacije padanja žetona i provere pobedničkih kombinacija u realnom vremenu, kao i podrška za lokalni mod igranja."
   },
   {
     title: "Arduino Projects",
@@ -26,6 +34,12 @@ export const projects: Project[] = [
     hostedUrl: "https://www.youtube.com/@dzemilmanic",
     image:
       "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800",
+    images: [
+      "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/1105379/pexels-photo-1105379.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    details: "Kolekcija se sastoji od više praktičnih projekata, uključujući pametne sisteme kućne automatizacije (Smart Home), ultrazvučne senzore udaljenosti, displeje, automatsko zalivanje biljaka na osnovu vlažnosti zemljišta, kao i IoT integraciju za slanje podataka na cloud i kontrolu preko mobilnih telefona."
   },
   {
     title: "Pyzzle",
@@ -53,6 +67,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dzemilmanic/Oculus-web",
     hostedUrl: "https://oculusklinika.up.railway.app/",
     image: "https://dzemil.blob.core.windows.net/slike/oculus_home.png",
+    images: [
+      "https://dzemil.blob.core.windows.net/slike/oculus_home.png",
+      "https://dzemil.blob.core.windows.net/slike/app.jpg",
+      "https://images.pexels.com/photos/4056816/pexels-photo-4056816.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    details: "Ova klinika omogućava kompletno upravljanje zdravstvenim kartonima pacijenata, zakazivanje i otkazivanje pregleda, kao i uvid u istoriju bolesti i prepisane terapije. Sistem poseduje tri uloge: pacijent, lekar i administrator, sa prilagođenim interfejsom za svaku od uloga radi maksimalne efikasnosti rada."
   },
   {
     title: "E-commerce WPF Platform",

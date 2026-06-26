@@ -14,9 +14,11 @@ import {
   MessageSquare,
   Instagram,
   GitBranch,
+  X,
 } from "lucide-react";
 import "./App.css";
 import { projects } from "./data/projects";
+import type { Project } from "./data/projects";
 import { skillCategories } from "./data/skills";
 
 
@@ -32,6 +34,73 @@ function App() {
     window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3
   );
   const observerRef = useRef<IntersectionObserver | null>(null);
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedProject]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const scrollToSlide = (index: number) => {
+    if (sliderRef.current) {
+      const container = sliderRef.current;
+      const slideWidth = container.clientWidth;
+      container.scrollTo({
+        left: index * slideWidth,
+        behavior: "smooth",
+      });
+      setActiveSlideIndex(index);
+    }
+  };
+
+  const handlePrevSlide = () => {
+    if (selectedProject?.images) {
+      const total = selectedProject.images.length;
+      const nextIndex = (activeSlideIndex - 1 + total) % total;
+      scrollToSlide(nextIndex);
+    }
+  };
+
+  const handleNextSlide = () => {
+    if (selectedProject?.images) {
+      const total = selectedProject.images.length;
+      const nextIndex = (activeSlideIndex + 1) % total;
+      scrollToSlide(nextIndex);
+    }
+  };
+
+  const handleSliderScroll = () => {
+    if (sliderRef.current) {
+      const container = sliderRef.current;
+      const scrollLeft = container.scrollLeft;
+      const slideWidth = container.clientWidth || 1;
+      const index = Math.round(scrollLeft / slideWidth);
+      if (index !== activeSlideIndex && selectedProject?.images && index < selectedProject.images.length) {
+        setActiveSlideIndex(index);
+      }
+    }
+  };
 
   useEffect(() => {
     // Loading sequence
@@ -452,8 +521,9 @@ function App() {
                 .map((project, index) => (
                   <div
                     key={currentPage * projectsPerPage + index}
-                    className="project-card animated-project-card"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="project-card animated-project-card clickable-card"
+                    style={{ animationDelay: `${index * 0.1}s`, cursor: "pointer" }}
+                    onClick={() => setSelectedProject(project)}
                   >
                     {/* Image — links to hosted project if available */}
                     <div className="project-header">
@@ -469,6 +539,7 @@ function App() {
                           rel="noopener noreferrer"
                           className="project-overlay"
                           title="View live project"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <Globe className="overlay-icon" />
                           <span className="overlay-label">Live Demo</span>
@@ -500,6 +571,7 @@ function App() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="project-link"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <GitBranch className="link-icon" />
                           View Repository
@@ -510,6 +582,7 @@ function App() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="project-link project-link-hosted"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <Globe className="link-icon" />
                             Live Demo
@@ -687,6 +760,102 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <div className="modal-backdrop" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setSelectedProject(null)} aria-label="Zatvori">
+              <X className="modal-close-icon" />
+            </button>
+            
+            {/* Gallery Section */}
+            <div className="modal-gallery">
+              {selectedProject.images && selectedProject.images.length > 0 ? (
+                <div className="modal-slider">
+                  <div className="modal-slides-container" ref={sliderRef} onScroll={handleSliderScroll}>
+                    {selectedProject.images.map((img, i) => (
+                      <div className="modal-slide" key={i}>
+                        <img src={img} alt={`${selectedProject.title} slika ${i + 1}`} className="modal-slide-image" />
+                      </div>
+                    ))}
+                  </div>
+                  {selectedProject.images.length > 1 && (
+                    <>
+                      <button className="modal-slider-btn modal-slider-btn-prev" onClick={handlePrevSlide} aria-label="Prethodna slika">
+                        <ChevronLeft />
+                      </button>
+                      <button className="modal-slider-btn modal-slider-btn-next" onClick={handleNextSlide} aria-label="Sledeća slika">
+                        <ChevronRight />
+                      </button>
+                      <div className="modal-slider-dots">
+                        {selectedProject.images.map((_, i) => (
+                          <button
+                            key={i}
+                            className={`modal-slider-dot ${activeSlideIndex === i ? "active" : ""}`}
+                            onClick={() => scrollToSlide(i)}
+                            aria-label={`Idi na sliku ${i + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ) : (
+                <div className="modal-single-image-container">
+                  <img src={selectedProject.image} alt={selectedProject.title} className="modal-single-image" />
+                </div>
+              )}
+            </div>
+
+            {/* Info Section */}
+            <div className="modal-info">
+              <h2 className="modal-title">{selectedProject.title}</h2>
+              
+              <div className="modal-technologies">
+                {selectedProject.technologies.map((tech) => (
+                  <span key={tech} className="tech-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="modal-description-section">
+                <p className="modal-description">{selectedProject.description}</p>
+                {selectedProject.details && (
+                  <div className="modal-details-container">
+                    <h4 className="modal-details-heading">Detalji projekta</h4>
+                    <p className="modal-details-text">{selectedProject.details}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className="modal-actions">
+                <a
+                  href={selectedProject.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary modal-action-btn"
+                >
+                  <GitBranch className="btn-icon" />
+                  View Repository
+                </a>
+                {selectedProject.hostedUrl && (
+                  <a
+                    href={selectedProject.hostedUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary modal-action-btn"
+                  >
+                    <Globe className="btn-icon" />
+                    Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
