@@ -145,5 +145,10 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dzemilmanic/Trainify-frontend",
     hostedUrl: "https://trainify.up.railway.app/",
     image: "https://i.postimg.cc/Nf2cF5F4/image.png",
+    images: [
+      "https://i.postimg.cc/Nf2cF5F4/image.png",
+      "https://i.postimg.cc/h450MGsc/image.png",
+      "https://i.postimg.cc/cJF9QGLv/image.png"
+    ],
   },
 ];
