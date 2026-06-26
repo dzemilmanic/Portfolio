@@ -20,8 +20,8 @@ export const projects: Project[] = [
     image: "https://dzemil.blob.core.windows.net/slike/connect4.png",
     images: [
       "https://dzemil.blob.core.windows.net/slike/connect4.png",
-      "https://images.pexels.com/photos/3719037/pexels-photo-3719037.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/9072216/pexels-photo-9072216.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://i.postimg.cc/y8V29PT4/image.png",
+      "https://i.postimg.cc/L8DK07s4/image.png"
     ],
     details: "Ova igra sadrži i Django backend koji omogućava praćenje rezultata, istoriju igara i matchmaking za dva igrača u realnom vremenu. Frontend je kreiran pomoću React-a kako bi se obezbedio gladak i reaktivan korisnički interfejs. Dodatno su implementirane animacije padanja žetona i provere pobedničkih kombinacija u realnom vremenu, kao i podrška za lokalni mod igranja."
   },
@@ -49,6 +49,11 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dzemilmanic/Puzzle",
     hostedUrl: "https://pyzzle.up.railway.app/",
     image: "https://dzemil.blob.core.windows.net/slike/puzla.png",
+    images: [
+      "https://dzemil.blob.core.windows.net/slike/puzla.png",
+      "https://i.postimg.cc/zXffjn7p/image.png",
+      "https://i.postimg.cc/YqL5M0Cp/image.png"
+    ],
   },
   {
     title: "Structo",
@@ -58,6 +63,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dzemilmanic/Structo",
     hostedUrl: "https://structo.up.railway.app/",
     image: "https://dzemil.blob.core.windows.net/slike/structo.png",
+    images: [
+      "https://dzemil.blob.core.windows.net/slike/structo.png",
+      "https://i.postimg.cc/9Qrtvwmd/image.png",
+      "https://i.postimg.cc/4x7V8CP2/image.png",
+      "https://i.postimg.cc/BvfLMjX3/image.png",
+    ],
   },
   {
     title: "Oculus Clinic",
@@ -69,8 +80,9 @@ export const projects: Project[] = [
     image: "https://dzemil.blob.core.windows.net/slike/oculus_home.png",
     images: [
       "https://dzemil.blob.core.windows.net/slike/oculus_home.png",
-      "https://dzemil.blob.core.windows.net/slike/app.jpg",
-      "https://images.pexels.com/photos/4056816/pexels-photo-4056816.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://i.postimg.cc/Z5HnFwtj/image.png",
+      "https://i.postimg.cc/wjqTvDyY/image.png",
+      "https://i.postimg.cc/j57R9X9Q/image.png",
     ],
     details: "Ova klinika omogućava kompletno upravljanje zdravstvenim kartonima pacijenata, zakazivanje i otkazivanje pregleda, kao i uvid u istoriju bolesti i prepisane terapije. Sistem poseduje tri uloge: pacijent, lekar i administrator, sa prilagođenim interfejsom za svaku od uloga radi maksimalne efikasnosti rada."
   },
@@ -118,6 +130,10 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dzemilmanic/navigo",
     hostedUrl: "https://navigo.up.railway.app/",
     image: "https://i.postimg.cc/TPTMj4K1/navigo.png",
+    images: [
+      "https://i.postimg.cc/TPTMj4K1/navigo.png",
+      "https://i.postimg.cc/4ysj5QTB/image.png",
+    ],
   },
   {
     title: "Air Quality Monitor",
@@ -148,7 +164,8 @@ export const projects: Project[] = [
     images: [
       "https://i.postimg.cc/Nf2cF5F4/image.png",
       "https://i.postimg.cc/h450MGsc/image.png",
-      "https://i.postimg.cc/cJF9QGLv/image.png"
+      "https://i.postimg.cc/cJF9QGLv/image.png",
+      "https://i.postimg.cc/L53Z12m0/image.png",
     ],
   },
 ];
