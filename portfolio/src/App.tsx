@@ -261,9 +261,8 @@ function App() {
       <div
         className="floating-profile"
         style={{
-          transform: `translateY(${scrollY * 0.1}px) rotate(${
-            scrollY * 0.05
-          }deg)`,
+          transform: `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05
+            }deg)`,
         }}
       >
         <img
@@ -294,9 +293,8 @@ function App() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`nav-link ${
-                      activeSection === item.id ? "active" : ""
-                    }`}
+                    className={`nav-link ${activeSection === item.id ? "active" : ""
+                      }`}
                   >
                     <IconComponent className="nav-icon" />
                     <span>{item.label}</span>
@@ -308,14 +306,14 @@ function App() {
         </div>
       </nav>
 
-     
+
       <div className="hosting-notice">
         <span className="hosting-notice-dot" />
         <span className="hosting-notice-text">
           Projects are currently not hosted — demos may be unavailable.
         </span>
       </div>
-      
+
 
       {/* Hero Section */}
       <section id="home" className="hero-section visible">
@@ -768,7 +766,7 @@ function App() {
             <button className="modal-close-btn" onClick={() => setSelectedProject(null)} aria-label="Zatvori">
               <X className="modal-close-icon" />
             </button>
-            
+
             {/* Gallery Section */}
             <div className="modal-gallery">
               {selectedProject.images && selectedProject.images.length > 0 ? (
@@ -811,7 +809,7 @@ function App() {
             {/* Info Section */}
             <div className="modal-info">
               <h2 className="modal-title">{selectedProject.title}</h2>
-              
+
               <div className="modal-technologies">
                 {selectedProject.technologies.map((tech) => (
                   <span key={tech} className="tech-tag">
@@ -824,7 +822,7 @@ function App() {
                 <p className="modal-description">{selectedProject.description}</p>
                 {selectedProject.details && (
                   <div className="modal-details-container">
-                    <h4 className="modal-details-heading">Detalji projekta</h4>
+                    <h4 className="modal-details-heading">Project Details</h4>
                     <p className="modal-details-text">{selectedProject.details}</p>
                   </div>
                 )}
